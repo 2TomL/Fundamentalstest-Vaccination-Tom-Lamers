@@ -8,7 +8,7 @@ public abstract class Robot {
     }
 
     public void boot(){
-        System.out.println("robot: " + unitName + " - is POWERED UP");
+        System.out.println("Robot: " + unitName + " - is POWERED UP");
     }
 
     public String getUnitName() {
