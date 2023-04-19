@@ -31,23 +31,32 @@ public class VacinationApp {
         myShelter.addAnimal(monkey2);
         myShelter.addAnimal(monkey3);
 
+        // dieren gesorteerd per naam
         System.out.println();
         myShelter.sortAnimalsByName();
         System.out.println("My sorted animals by name: ");
         myShelter.printAnimals();
 
+        //aantal dieren geregistreerd
+        System.out.println("\nNr of animals registerd: " + myShelter.countAnimals() + "\n");
+
+        //Hier checken we of het dier is gevacineerd of niet voor iets
+        System.out.println("Monkey vacinated for: " );
+        monkey1.vaccinateAnimal(CHICKENPOCKS);
+        System.out.println(monkey1.getIsVaccinated());
+        System.out.println();
+
+        // lijst dieren die niet gevacineerd zijn voor een bepaalde ziekte
+        myShelter.printAnimalsNotVaccinated(Disease.FLUE);
+
+        //Geeft het oudste dier weer
+        System.out.println("\nThe oldest stinker is: " + myShelter.findOldestAnimal());
+
+        //De dierenzoeker
         System.out.println("\nTo find the animal type name: ");
         Scanner myScanner = new Scanner(System.in);
         String animalName = myScanner.nextLine();
         System.out.println("Found your animal: " + myShelter.findAnimal(animalName.toLowerCase()));
 
-
-        System.out.println("\nNr of animals registerd: " + myShelter.countAnimals() + "\n");
-
-        System.out.println("Monkey vacinated for: " );
-        monkey1.vaccinateAnimal(CHICKENPOCKS);
-        System.out.println(monkey1.getIsVaccinated());
-        System.out.println();
-        myShelter.printAnimalsNotVaccinated(Disease.FLUE);
     }
 }
