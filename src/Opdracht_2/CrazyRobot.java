@@ -8,12 +8,10 @@ public class CrazyRobot extends Robot{
 
     public void boot() {
         String name = getUnitName();
-        String Order = "";
-        for (int index = getUnitName().length() - 1 ; index >= 0; index--) {
-            Order += name.charAt(index);
-        }
-        System.out.println(Order);
+        StringBuilder reversedName = new StringBuilder(name).reverse();
+        System.out.println(reversedName.toString());
     }
+
     @Override
     public String toString() {
         return "CrazyRobot{" +

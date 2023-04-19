@@ -16,7 +16,6 @@ public class AnimalShelter {
     }
 
     public void addAnimal(Animal animal) {
-
         if (!animals.contains(animal)) {
             animals.add(animal);
         }
