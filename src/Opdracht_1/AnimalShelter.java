@@ -22,6 +22,7 @@ public class AnimalShelter {
     }
 
     public void printAnimals() {
+
         animals.forEach(System.out::println);
     }
 
@@ -51,10 +52,12 @@ public class AnimalShelter {
     }
 
     public void sortAnimalsByName() {
+
         animals.sort(Comparator.comparing(Animal::getName));
     }
 
     public void sortAnimalsByAge() {
+
         animals.sort(Comparator.comparing(Animal::getAge));
     }
 
@@ -65,9 +68,9 @@ public class AnimalShelter {
                 .forEach(System.out::println);
     }
 
-    private Optional<Animal> findAnimal(int number) {
+    public Optional<Animal> findAnimal(int animalNumber) {
         for (Animal myAnimal : animals) {
-            if (number == myAnimal.getAnimalNr()) {
+            if (myAnimal.getAnimalNr() == animalNumber) {
                 return Optional.of(myAnimal);
             }
         }
@@ -90,7 +93,6 @@ public class AnimalShelter {
         }
         return null;
     }
-
     public void treatAnimal(String name){
         for (Animal animalName : animals) {
             if (animalName.getName().equals(name)) {
@@ -99,18 +101,13 @@ public class AnimalShelter {
         }
     }
     public void treatAllAnimals(){
+
         animals.forEach(Animal ::treatAnimal);
     }
+
     public Animal findOldestAnimal() {
         sortAnimalsByAge();
         return animals.get(animals.size() - 1);
-//        Animal oldest = null;
-//        for (Animal oldestAnimal : animals) {
-//            if (oldest == null || oldestAnimal.getAge() > oldest.getAge()) {
-//                oldestAnimal = oldest;
-//            }
-//        }
-//        return oldest;
     }
 
     public int countAnimals() {

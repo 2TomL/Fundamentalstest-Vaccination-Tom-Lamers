@@ -2,6 +2,7 @@ package Opdracht_1.App;
 
 import Opdracht_1.*;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 import static Opdracht_1.Disease.CHICKENPOCKS;
@@ -57,6 +58,28 @@ public class VacinationApp {
         Scanner myScanner = new Scanner(System.in);
         String animalName = myScanner.nextLine();
         System.out.println("Found your animal: " + myShelter.findAnimal(animalName.toLowerCase()));
+        System.out.println("\nTo find the animal type nr: ");
+        int animalNr = myScanner.nextInt();
+        System.out.println("Found your animal: " + myShelter.findAnimal(animalNr));
 
+        //print het opgeven van een int (nr) or string (name)
+        System.out.print("\nEnter the animal nr or name: ");
+        if (myScanner.hasNextInt()) {
+            int myAnimalNr = myScanner.nextInt();
+            Optional<Animal> animal = myShelter.findAnimal(myAnimalNr);
+            if (animal.isPresent()) {
+                System.out.println("The animal with nr " + myAnimalNr + " is: " + animal.get());
+            } else {
+                System.out.println("No animal with nr " + myAnimalNr + " was found.");
+            }
+        } else {
+            String myAnimalName = myScanner.next().toLowerCase();
+            Optional<Animal> animal = myShelter.findAnimal(myAnimalName);
+            if (animal.isPresent()) {
+                System.out.println("The animal with name " + myAnimalName + " is: " + animal.get());
+            } else {
+                System.out.println("No animal with name " + myAnimalName + " was found.");
+            }
+        }
     }
 }

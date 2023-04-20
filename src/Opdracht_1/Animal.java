@@ -9,7 +9,7 @@ public abstract class Animal implements Treatable,Vaccinateable{
     private String name;
     private int animalNr;
     private Map<Disease, Boolean> isVaccinated;
-
+    
     {
         isVaccinated = new HashMap<>();
         Disease[] diseases = Disease.values();
@@ -20,6 +20,7 @@ public abstract class Animal implements Treatable,Vaccinateable{
     }
 
     public Animal() {
+
         this.name = "No name";
     }
 
@@ -30,32 +31,39 @@ public abstract class Animal implements Treatable,Vaccinateable{
         this.animalNr = animalNr;
     }
 
-        public void setClean ( boolean clean){
+        public void setClean (boolean clean){
+
         isClean = clean;
         }
 
         public int getAge () {
-            return age;
+
+        return age;
         }
 
         public String getName () {
+
             return name;
         }
 
         public int getAnimalNr () {
-            return animalNr;
+
+        return animalNr;
         }
 
         public void setAnimalNr ( int animalNr){
+
         this.animalNr = animalNr;
         }
 
         public Map<Disease, Boolean> getIsVaccinated () {
-            return isVaccinated;
+
+        return isVaccinated;
         }
 
     @Override
     public void vaccinateAnimal(Disease disease) {
+
         isVaccinated.replace(disease, true);
     }
 
