@@ -10,13 +10,13 @@ public class RobotApp {
 
         RobotApp myRobotApp = new RobotApp();
         CrazyRobot crazyRobot1 = new CrazyRobot("CrazyRobot1 Franky");
-        BendingRobot bendingRobot1 = new BendingRobot("BendingRobot1", 120);
+        BendingRobot bendingRobot1 = new BendingRobot("BendingRobot1", 100);
         LiftingRobot liftingRobot1 = new LiftingRobot("Lifterke",2.60);
 
         liftingRobot1.boot();
-        bendingRobot1.bend(119);
+        bendingRobot1.bend(200);
         bendingRobot1.bend(30.0);
         liftingRobot1.lift(1.60);
-        liftingRobot1.lift(3.50);
+        liftingRobot1.lift(4.0);
     }
 }
